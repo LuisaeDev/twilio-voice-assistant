@@ -31,7 +31,7 @@ Here are key elements of the application:
     - Log in to your Twilio account.
     - Navigate to the [Twilio Console](https://www.twilio.com/console).
     - Go to Voice Settings->Settings->General and disable HTTP Basic Authentication for media access.
-    - Create a new Voice project and set up the ngrok URL as the webhook.
+    - Create a new Voice project and set up the ngrok URL with the webhook route path. Example: `https://5a07-190-92-45-227.ngrok-free.app/api/v1/voice-assistant/incoming-call`.
     - Go to Voice Phone Numbers->Verified Caller IDs and add the user agent's phone number to perform tests.
 
 5. **Clone the repository:**
