@@ -14,21 +14,26 @@ Here are key elements of the application:
 
 ## Installation
 
-1. Clone the repository:
+1. **Create a Twilio Account:**
+
+   - Go to [Twilio](https://www.twilio.com/) and sign up for a new account.
+   - Follow the on-screen instructions to verify your account.
+
+2. **Clone the repository:**
 
     ```bash
     git clone git@github.com:LuisaeDev/twilio-voice-assistant.git
     ```
 
-2. Navigate to the project directory:
+3. **Navigate to the project directory:**
 
     ```bash
     cd twilio-voice-assistant
     ```
 
-3. Install Docker on your machine.
+4. **Install Docker on your machine.**
 
-4. Run the following Docker command to install dependencies using Laravel Sail:
+5. **Run the following Docker command to install dependencies using Laravel Sail:**
 
     ```bash
     docker run --rm \
@@ -39,7 +44,7 @@ Here are key elements of the application:
         composer install --ignore-platform-reqs
     ```
 
-5. Update the Twilio credentials in the `.env` file:
+6. **Update the Twilio credentials in the `.env` file:**
 
     ```env
     TWILIO_SID=your_twilio_sid
@@ -47,12 +52,21 @@ Here are key elements of the application:
     TWILIO_PHONE_NUMBER=your_twilio_phone_number
     ```
 
-6. Modify the seeder to define the demo agent and its phone number.
+7. **Modify the seeder to define the demo agent and its phone number.**
 
-7. Run the migrations and seed the database:
+8. **Run the migrations and seed the database:**
 
     ```bash
     ./vendor/bin/sail artisan migrate --seed
     ```
 
-Now, your Twilio Voice Assistant project is set up with the necessary dependencies and configurations. Make sure to customize the Twilio credentials and other settings based on your requirements.
+9. **Install and run ngrok in your environment.** This step is crucial for exposing your local server to the internet, allowing Twilio to send webhooks to your development environment. Visit [ngrok](https://ngrok.com/) for installation instructions.
+
+10. **Configure Twilio Voice IP Service:**
+
+    - Log in to your Twilio account.
+    - Navigate to the [Twilio Console](https://www.twilio.com/console).
+    - Create a new Voice project and set up a TwiML Bin or Function to handle incoming calls.
+    - Use the ngrok URL as the webhook for incoming calls in your TwiML configuration.
+
+Now, your Twilio Voice Assistant project is set up, and Twilio is configured to forward incoming calls to your local environment through ngrok. Make sure to customize the Twilio credentials and other settings based on your requirements.
