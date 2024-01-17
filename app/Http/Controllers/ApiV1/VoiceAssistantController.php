@@ -25,7 +25,7 @@ class VoiceAssistantController extends Controller
     }
 
     /**
-     * Handle the first menu user input
+     * Handle the start user input
      *
      * @return Response
      */
@@ -34,7 +34,7 @@ class VoiceAssistantController extends Controller
         // Get the data from the request
         $data = request()->all();
 
-        // Handle the first menu user input
+        // Handle the start user input
         $response = VoiceAssistantHandlers::startUserInput($data);
 
         // Emit the TwiML response
@@ -42,7 +42,7 @@ class VoiceAssistantController extends Controller
     }
 
     /**
-     * Handle the recorded voice message
+     * Handle the record voice message
      *
      * @return Response
      */
@@ -51,7 +51,7 @@ class VoiceAssistantController extends Controller
         // Get the data from the request
         $data = request()->all();
 
-        // Handle the recorded voice message
+        // Handle the record voice message
         $response = VoiceAssistantHandlers::recordVoiceMessage($data);
         
         // Emit the TwiML response
@@ -59,7 +59,7 @@ class VoiceAssistantController extends Controller
     }
 
     /**
-     * Handle the agent answered call
+     * Handle the agent call
      *
      * @return Response
      */
@@ -68,7 +68,7 @@ class VoiceAssistantController extends Controller
         // Get the data from the request
         $data = request()->all();
 
-        // Handle the agent answered call
+        // Handle the agent call
         $response = VoiceAssistantHandlers::agentCall($data);
         
         // Emit the TwiML response

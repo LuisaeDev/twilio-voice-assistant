@@ -47,6 +47,7 @@ class VoiceAssistantHandlers implements \App\Contracts\VoiceAssistantHandlers
                 CallTrack::create([
                     'sid' => $data['CallSid'],
                     'from' => $data['From'],
+                    'to' => $agent->phone_number,
                     'status' => $data['CallStatus'],
                     'agent_id' => $agent->id
                 ]);
@@ -128,7 +129,7 @@ class VoiceAssistantHandlers implements \App\Contracts\VoiceAssistantHandlers
         CallTrack::query()
             ->where('sid', $data['CallSid'])
             ->update([
-                'status' => $data['CallStatus']
+                'status' => $data['DialCallStatus']
             ]);
         
         switch ($data['DialCallStatus']) {

@@ -18,6 +18,7 @@ class CallTrack extends Model
     protected $fillable = [
         'sid',
         'from',
+        'to',
         'status',
         'agent_id',
         'recording_url',
