@@ -1,6 +1,6 @@
 # Twilio Voice Assistant
 
-## Application Description (English)
+## Application Description
 
 The Twilio Voice Assistant is a REST API equipped with a Twilio webhook to handle calls from Twilio's Voice IP service.
 Here are key elements of the application:
